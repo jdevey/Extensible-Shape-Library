@@ -1,7 +1,9 @@
 ﻿namespace ShapeLibrary
 {
-    public class ShapeException : System.Exception
-    {
-        public ShapeException(string message) : base(message) {}
-    }
+	public class ShapeException : System.Exception
+	{
+		public ShapeException(string message) : base(message)
+		{
+		}
+	}
 }

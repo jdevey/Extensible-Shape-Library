@@ -2,19 +2,12 @@
 
 namespace ShapeLibrary
 {
-	public class Line : Shape
+	public class Rectangle : Shape
 	{
 		public Point point1 { get; private set; }
 		public Point point2 { get; private set; }
 
-		public Line(double x1, double y1, double x2, double y2)
-		{
-			point1 = new Point(x1, y1);
-			point2 = new Point(x2, y2);
-			++keyCounter;
-		}
-
-		public Line(Point point1, Point point2)
+		public Rectangle(Point point1, Point point2)
 		{
 			this.point1 = point1;
 			this.point2 = point2;
@@ -43,14 +36,7 @@ namespace ShapeLibrary
 
 		public override double getArea()
 		{
-			return 0.0;
-		}
-
-		public double computeLength()
-		{
-			return Math.Sqrt(
-				Math.Pow(point2.x - point1.x, 2) +
-				Math.Pow(point2.y - point1.y, 2));
+			return getWidth() * getHeight();
 		}
 
 		private Point getCenter()
@@ -58,10 +44,14 @@ namespace ShapeLibrary
 			return new Point((point1.x + point2.x) / 2, (point1.y + point2.y) / 2);
 		}
 
-//        // Computing slope is dangerous
-//        public double computeSlope()
-//        {
-//            return (point2.y - point1.y) / (point2.x - point1.x);
-//        }
+		public double getWidth()
+		{
+			return Math.Abs(point1.x - point2.x);
+		}
+
+		public double getHeight()
+		{
+			return Math.Abs(point1.y - point2.y);
+		}
 	}
 }

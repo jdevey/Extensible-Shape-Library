@@ -2,71 +2,43 @@
 
 namespace ShapeLibrary
 {
-    public class Circle
-    {
-        public Point Center { get; private set; }
-        public double Radius { get; private set;  }
+	public class Circle : Shape
+	{
+		public Point center { get; private set; }
+		public double radius { get; private set; }
 
-        /**
-         * Constructor with x-y Location for center
-         *
-         * @param x                 The x-location of the center of the circle -- must be a valid double
-         * @param y                 The y-location of the center of the circle
-         * @param radius            The radius of the circle -- must be greater or equal to zero.
-         * @throws ShapeException   The exception thrown if the x, y, or z are not valid
-         */
-        public Circle(double x, double y, double radius)
-        {
-            Validator.ValidatePositiveDouble(radius, "Invalid radius");
-            Center = new Point(x, y);
-            Radius = radius;
-        }
+		public Circle(double x, double y, double radius)
+		{
+			Validator.validatePositiveDouble(radius,
+				Validator.generateInvalidValueMsg("radius", radius));
+			center = new Point(x, y);
+			this.radius = radius;
+			++keyCounter;
+		}
 
-        /**
-         * Constructor with a Point for center
-         *
-         * @param center            The x-location of the center of the circle -- must be a valid point
-         * @param radius            The radius of the circle -- must be greater or equal to zero.
-         * @throws ShapeException   The exception thrown if the x, y, or z are not valid
-         */
-        public Circle(Point center, double radius) {
-        
-            Validator.ValidatePositiveDouble(radius, "Invalid radius");
-            Center = center ?? throw new ShapeException("Invalid center point");
-            Radius = radius;
-        }
+		public Circle(Point center, double radius)
+		{
+			Validator.validatePositiveDouble(radius,
+				Validator.generateInvalidValueMsg("radius", radius));
+			this.center = center;
+			this.radius = radius;
+		}
 
-        /**
-         * Move the circle
-         * @param deltaX            a delta change for the x-location of center of the circle
-         * @param deltaY            a delta change for the y-location of center of the circle
-         * @throws ShapeException   Exception thrown if either the delta x or y are not valid doubles
-         */
-        public void Move(double deltaX, double deltaY)
-        {
-            Center.Move(deltaX, deltaY);
-        }
+		public override void translate(double dx, double dy)
+		{
+			Validator.validateTranslate(dx, dy);
+			center.translate(dx, dy);
+		}
 
-        /**
-         * Scale the circle
-         *
-         * @param scaleFactor       a non-negative double that represents the percentage to scale the circle.
-         *                          0>= and <1 to shrink.
-         *                          >1 to grow.
-         * @throws ShapeException   Exception thrown if the scale factor is not valid
-         */
-        public void Scale(double scaleFactor)
-        {
-            Validator.ValidatePositiveDouble(scaleFactor, "Invalid scale factor");
-            Radius *= scaleFactor;
-        }
+		public override void scale(double delta)
+		{
+			Validator.validateScale(delta);
+			radius *= delta;
+		}
 
-        /**
-         * @return  The area of the circle.
-         */
-        public double ComputeArea()
-        {
-            return Math.PI * Math.Pow(Radius, 2);
-        }
-    }
+		public override double getArea()
+		{
+			return Math.PI * Math.Pow(radius, 2);
+		}
+	}
 }
