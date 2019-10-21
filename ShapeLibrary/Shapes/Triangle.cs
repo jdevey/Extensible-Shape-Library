@@ -50,7 +50,7 @@ namespace ShapeLibrary.Shapes
 			return Math.Sqrt(s * (s - a) * (s - b) * (s - c));
 		}
 
-		public Point getCenter()
+		private Point getCenter()
 		{
 			return new Point((point1.x + point2.x + point3.x) / 3, (point1.y + point2.y + point3.y) / 3);
 		}

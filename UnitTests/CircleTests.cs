@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using ShapeLibrary;
+using ShapeLibrary.Shapes;
 
 namespace UnitTests
 {
