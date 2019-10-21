@@ -1,9 +1,8 @@
-﻿namespace ShapeLibrary
+﻿namespace ShapeLibrary.Shapes
 {
 	public abstract class Shape
 	{
 		protected static uint keyCounter = 0;
-		//public uint shapeId { get; protected set; }
 		public readonly uint shapeId = keyCounter;
 		
 		public abstract void translate(double dx, double dy);

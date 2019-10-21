@@ -8,19 +8,27 @@
       <e p="packages" t="ExcludeRecursive" />
       <e p="ShapeLibrary" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Circle.cs" t="Include" />
-        <e p="Composite.cs" t="Include" />
-        <e p="Line.cs" t="Include" />
+        <e p="FileReadWriter.cs" t="Include" />
+        <e p="FileReadWriterConcrete.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
-        <e p="Picture.cs" t="Include" />
-        <e p="Point.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
-        <e p="Rectangle.cs" t="Include" />
-        <e p="Shape.cs" t="Include" />
         <e p="ShapeException.cs" t="Include" />
+        <e p="ShapeFactory.cs" t="Include" />
+        <e p="ShapeFactoryConcrete.cs" t="Include" />
         <e p="ShapeLibrary.csproj" t="IncludeRecursive" />
+        <e p="Shapes" t="Include">
+          <e p="Circle.cs" t="Include" />
+          <e p="Composite.cs" t="Include" />
+          <e p="Line.cs" t="Include" />
+          <e p="Picture.cs" t="Include" />
+          <e p="Point.cs" t="Include" />
+          <e p="Rectangle.cs" t="Include" />
+          <e p="Shape.cs" t="Include" />
+          <e p="Triangle.cs" t="Include" />
+          <e p="Utils.cs" t="Include" />
+        </e>
         <e p="Validator.cs" t="Include" />
       </e>
       <e p="UnitTests" t="IncludeRecursive">

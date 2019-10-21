@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace ShapeLibrary
+namespace ShapeLibrary.Shapes
 {
 	public class Composite : Shape
 	{

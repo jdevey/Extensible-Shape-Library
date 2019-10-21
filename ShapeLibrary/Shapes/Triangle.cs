@@ -1,26 +1,29 @@
 ﻿using System;
 
-namespace ShapeLibrary
+namespace ShapeLibrary.Shapes
 {
-	public class Rectangle : Shape
+	public class Triangle : Shape
 	{
 		public Point point1 { get; private set; }
 		public Point point2 { get; private set; }
-
-		public Rectangle(Point point1, Point point2)
+		public Point point3 { get; private set; }
+		
+		public Triangle(Point point1, Point point2, Point point3)
 		{
 			this.point1 = point1;
 			this.point2 = point2;
+			this.point3 = point3;
 			++keyCounter;
 		}
-
+		
 		public override void translate(double dx, double dy)
 		{
 			Validator.validateTranslate(dx, dy);
 			point1.translate(dx, dy);
 			point2.translate(dx, dy);
+			point3.translate(dx, dy);
 		}
-
+		
 		public override void scale(double delta)
 		{
 			Validator.validateScale(delta);
@@ -29,29 +32,27 @@ namespace ShapeLibrary
 			double point1dy = point1.y - center.y;
 			double point2dx = point2.x - center.x;
 			double point2dy = point2.y - center.y;
+			double point3dx = point3.x - center.x;
+			double point3dy = point3.y - center.y;
 			double newDelta = delta - 1;
 			point1.translate(point1dx * newDelta, point1dy * newDelta);
 			point2.translate(point2dx * newDelta, point2dy * newDelta);
+			point3.translate(point3dx * newDelta, point3dy * newDelta);
 		}
-
+		
+		// Heron's formula
 		public override double getArea()
 		{
-			return getWidth() * getHeight();
+			double a = Utils.pythagorean(point1.x, point1.y, point2.x, point2.y);
+			double b = Utils.pythagorean(point2.x, point2.y, point3.x, point3.y);
+			double c = Utils.pythagorean(point3.x, point3.y, point1.x, point1.y);
+			double s = (a + b + c) / 2;
+			return Math.Sqrt(s * (s - a) * (s - b) * (s - c));
 		}
 
-		private Point getCenter()
+		public Point getCenter()
 		{
-			return new Point((point1.x + point2.x) / 2, (point1.y + point2.y) / 2);
-		}
-
-		public double getWidth()
-		{
-			return Math.Abs(point1.x - point2.x);
-		}
-
-		public double getHeight()
-		{
-			return Math.Abs(point1.y - point2.y);
+			return new Point((point1.x + point2.x + point3.x) / 3, (point1.y + point2.y + point3.y) / 3);
 		}
 	}
 }

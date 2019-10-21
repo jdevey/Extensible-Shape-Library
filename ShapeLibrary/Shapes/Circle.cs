@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ShapeLibrary
+namespace ShapeLibrary.Shapes
 {
 	public class Circle : Shape
 	{

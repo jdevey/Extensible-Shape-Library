@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ShapeLibrary
+namespace ShapeLibrary.Shapes
 {
 	public class Line : Shape
 	{
@@ -44,13 +44,6 @@ namespace ShapeLibrary
 		public override double getArea()
 		{
 			return 0.0;
-		}
-
-		public double computeLength()
-		{
-			return Math.Sqrt(
-				Math.Pow(point2.x - point1.x, 2) +
-				Math.Pow(point2.y - point1.y, 2));
 		}
 
 		private Point getCenter()

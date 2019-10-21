@@ -1,6 +1,7 @@
 ﻿namespace ShapeLibrary
 {
-	public class Picture
+	public class FileReadWriter
 	{
+		
 	}
 }

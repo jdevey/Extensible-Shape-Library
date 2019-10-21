@@ -1,4 +1,4 @@
-﻿namespace ShapeLibrary
+﻿namespace ShapeLibrary.Shapes
 {
 	public class Point : Shape
 	{
