@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.Serialization;
+using System.Xml;
 
 namespace ShapeLibrary.Shapes
 {
@@ -58,10 +59,28 @@ namespace ShapeLibrary.Shapes
 			return new Point((point1.x + point2.x) / 2, (point1.y + point2.y) / 2);
 		}
 
-//        // Computing slope is dangerous
-//        public double computeSlope()
-//        {
-//            return (point2.y - point1.y) / (point2.x - point1.x);
-//        }
+		public override void WriteXml (XmlWriter writer)
+		{
+			writer.WriteStartElement(nameof(point1));
+			point1.WriteXml(writer);
+			writer.WriteEndElement();
+			
+			writer.WriteStartElement(nameof(point2));
+			point2.WriteXml(writer);
+			writer.WriteEndElement();
+		}
+
+		public override void ReadXml (XmlReader reader)
+		{
+			reader.Read();
+			Point p1 = new Point();
+			p1.ReadXml(reader);
+			point1 = p1;
+
+			reader.Read();
+			Point p2 = new Point();
+			p2.ReadXml(reader);
+			point2 = p2;
+		}
 	}
 }

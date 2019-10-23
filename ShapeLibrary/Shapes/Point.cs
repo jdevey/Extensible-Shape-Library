@@ -1,11 +1,12 @@
-﻿using System.Xml.Serialization;
+﻿using System.Xml;
+using System.Xml.Serialization;
 
 namespace ShapeLibrary.Shapes
 {
 	public class Point : Shape
 	{
-		public double x { get; set; }
-		public double y { get; set; }
+		public double x { get; private set; }
+		public double y { get; private set; }
 		
 		// Default constructor for serialization
 		public Point()
@@ -54,6 +55,24 @@ namespace ShapeLibrary.Shapes
 		public Point copy()
 		{
 			return new Point(x, y);
+		}
+		
+		public override void WriteXml (XmlWriter writer)
+		{
+			writer.WriteStartElement(nameof(x));
+			writer.WriteValue(x);
+			writer.WriteEndElement();
+			
+			writer.WriteStartElement(nameof(y));
+			writer.WriteValue(y);
+			writer.WriteEndElement();
+		}
+
+		public override void ReadXml (XmlReader reader)
+		{
+			reader.Read();
+			x = double.Parse(reader.ReadInnerXml());
+			y = double.Parse(reader.ReadInnerXml());
 		}
 	}
 }

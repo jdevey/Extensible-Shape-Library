@@ -1,15 +1,27 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace ShapeLibrary.Shapes
 {
 	public class Composite : Shape
 	{
-		public readonly List<Shape> children = new List<Shape>();
+//		[XmlArrayItem(nameof(Circle), Type = typeof(Circle))]
+//		[XmlArrayItem(nameof(Composite), Type = typeof(Composite))]
+//		[XmlArrayItem(nameof(Line), Type = typeof(Line))]
+//		[XmlArrayItem(nameof(Picture), Type = typeof(Picture))]
+//		[XmlArrayItem(nameof(Point), Type = typeof(Point))]
+//		[XmlArrayItem(nameof(Rectangle), Type = typeof(Rectangle))]
+//		[XmlArrayItem(nameof(Triangle), Type = typeof(Triangle))]
+		public List<Shape> children { get; }
 
 		public Composite()
 		{
 			++keyCounter;
+			children = new List<Shape>();
 		}
 
 		public override void translate(double dx, double dy)
@@ -42,7 +54,7 @@ namespace ShapeLibrary.Shapes
 		public void addShape(Shape shape)
 		{
 			Validator.validateShape(shape,
-					Validator.generateInvalidValueMsg("shape", shape));
+				Validator.generateInvalidValueMsg("shape", shape));
 			children.Add(shape);
 		}
 
@@ -55,6 +67,37 @@ namespace ShapeLibrary.Shapes
 		public void eraseAllShapes()
 		{
 			children.Clear();
+		}
+
+		public override void WriteXml(XmlWriter writer)
+		{
+			writer.WriteStartElement(nameof(children));
+			foreach (Shape child in children)
+			{
+				writer.WriteStartElement(child.GetType().ToString());
+				child.WriteXml(writer);
+				writer.WriteEndElement();
+			}
+
+			writer.WriteEndElement();
+		}
+
+		public override void ReadXml(XmlReader reader)
+		{
+			reader.Read();
+			
+			int depth = reader.Depth;
+			while (true)
+			{
+				reader.Read();
+				Shape shape = Assembly.GetExecutingAssembly().CreateInstance(reader.Name) as Shape;
+				shape.ReadXml(reader);
+				children.Add(shape);
+				if (depth == reader.Depth)
+				{
+					break;
+				}
+			}
 		}
 
 //		private Shape getShapeById(uint id)

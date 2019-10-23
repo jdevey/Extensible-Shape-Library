@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml;
 
 namespace ShapeLibrary.Shapes
 {
@@ -65,6 +66,15 @@ namespace ShapeLibrary.Shapes
 		public double getHeight()
 		{
 			return Math.Abs(point1.y - point2.y);
+		}
+		
+		public override void WriteXml (XmlWriter writer)
+		{
+		}
+
+		public override void ReadXml (XmlReader reader)
+		{
+			reader.Read();
 		}
 	}
 }

@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
 
 namespace ShapeLibrary.Shapes
 {
-	public abstract class Shape
+	public abstract class Shape : IXmlSerializable
 	{
 		protected static uint keyCounter = 0;
 		public readonly uint shapeId = keyCounter;
@@ -30,10 +31,14 @@ namespace ShapeLibrary.Shapes
 		}
 		
 		// void render(); // TODO
-		
+
+		public abstract void WriteXml(XmlWriter writer);
+
+		public abstract void ReadXml(XmlReader reader);
+
 		public XmlSchema GetSchema()
 		{
-			return(null);
+			return null;
 		}
 	}
 }

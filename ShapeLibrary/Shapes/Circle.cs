@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 
 namespace ShapeLibrary.Shapes
 {
-	public class Circle : Shape, IXmlSerializable
+	public class Circle : Shape
 	{
 		public Point center { get; private set; }
 		public double radius { get; private set; }
@@ -49,14 +49,27 @@ namespace ShapeLibrary.Shapes
 			return Math.PI * radius * radius;
 		}
 		
-		public void WriteXml (XmlWriter writer)
+		public override void WriteXml (XmlWriter writer)
 		{
-			//writer.WriteString(personName);
+			writer.WriteStartElement(nameof(center));
+			center.WriteXml(writer);
+			writer.WriteEndElement();
+			
+			writer.WriteStartElement(nameof(radius));
+			writer.WriteValue(radius);
+			writer.WriteEndElement();
 		}
 
-		public void ReadXml (XmlReader reader)
+		public override void ReadXml (XmlReader reader)
 		{
-			//personName = reader.ReadString();
+			reader.Read();
+			
+			Point ctr = new Point();
+			ctr.ReadXml(reader);
+			center = ctr;
+
+			reader.Read();
+			radius = double.Parse(reader.ReadInnerXml());
 		}
 	}
 }
