@@ -9,13 +9,6 @@ namespace ShapeLibrary.Shapes
 {
 	public class Composite : Shape
 	{
-//		[XmlArrayItem(nameof(Circle), Type = typeof(Circle))]
-//		[XmlArrayItem(nameof(Composite), Type = typeof(Composite))]
-//		[XmlArrayItem(nameof(Line), Type = typeof(Line))]
-//		[XmlArrayItem(nameof(Picture), Type = typeof(Picture))]
-//		[XmlArrayItem(nameof(Point), Type = typeof(Point))]
-//		[XmlArrayItem(nameof(Rectangle), Type = typeof(Rectangle))]
-//		[XmlArrayItem(nameof(Triangle), Type = typeof(Triangle))]
 		public List<Shape> children { get; }
 
 		public Composite()
@@ -84,20 +77,20 @@ namespace ShapeLibrary.Shapes
 
 		public override void ReadXml(XmlReader reader)
 		{
-			reader.Read();
-			
 			int depth = reader.Depth;
-			while (true)
+			
+			reader.ReadStartElement();
+			reader.ReadStartElement();
+			
+			while (reader.NodeType != XmlNodeType.EndElement)
 			{
-				reader.Read();
 				Shape shape = Assembly.GetExecutingAssembly().CreateInstance(reader.Name) as Shape;
 				shape.ReadXml(reader);
 				children.Add(shape);
-				if (depth == reader.Depth)
-				{
-					break;
-				}
 			}
+			
+			reader.ReadEndElement();
+			reader.ReadEndElement();
 		}
 
 //		private Shape getShapeById(uint id)

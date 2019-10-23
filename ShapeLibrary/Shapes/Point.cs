@@ -70,9 +70,12 @@ namespace ShapeLibrary.Shapes
 
 		public override void ReadXml (XmlReader reader)
 		{
-			reader.Read();
+			reader.ReadStartElement();
+			
 			x = double.Parse(reader.ReadInnerXml());
 			y = double.Parse(reader.ReadInnerXml());
+			
+			reader.ReadEndElement();
 		}
 	}
 }

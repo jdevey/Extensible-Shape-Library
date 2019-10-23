@@ -14,6 +14,7 @@ namespace UnitTests
 			const string patht = @"C:\Users\devey\Code\Dump\shitHole\remote_filedump\my_tri.xml";
 			const string pathcirc = @"C:\Users\devey\Code\Dump\shitHole\remote_filedump\my_circ.xml";
 			const string pathc = @"C:\Users\devey\Code\Dump\shitHole\remote_filedump\my_comp.xml";
+			const string topcomp = @"C:\Users\devey\Code\Dump\shitHole\remote_filedump\topcomp.xml";
 			const string path2 = @"my_point.xml";
 			const string path3 = @"my_tri.xml";
 			Point p1 = new Point(13, 22);
@@ -64,7 +65,22 @@ namespace UnitTests
 			Circle compCircle2 = c1.children[1] as Circle;
 			Assert.AreEqual(compCircle1.center.x, compCircle2.center.x);
 			Assert.AreEqual(compCircle1.center.y, compCircle2.center.y);
-			Assert.AreEqual(compCircle1.radius, compCircle2.radius);			
+			Assert.AreEqual(compCircle1.radius, compCircle2.radius);
+			
+			Point topLayerPoint = new Point(100, 101);
+			Composite topLayerComp = new Composite();
+			topLayerComp.addShape(topLayerPoint);
+			topLayerComp.addShape(c1);
+			topLayerComp.save(topcomp);
+			Composite tlc2 = Composite.load(topcomp, typeof(Composite)) as Composite;
+			
+			Assert.AreEqual(topLayerPoint.x, (tlc2.children[0] as Point).x);
+			Composite bottom1 = tlc2.children[1] as Composite;
+			
+			Point compPoint3 = (topLayerComp.children[1] as Composite).children[0] as Point;
+			Point compPoint4 = bottom1.children[0] as Point;
+			Assert.AreEqual(compPoint3.x, compPoint4.x);
+			Assert.AreEqual(compPoint3.y, compPoint4.y);
 		}
 	}
 }

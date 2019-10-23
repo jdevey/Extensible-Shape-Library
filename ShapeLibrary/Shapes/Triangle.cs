@@ -79,20 +79,21 @@ namespace ShapeLibrary.Shapes
 
 		public override void ReadXml (XmlReader reader)
 		{
-			reader.Read();
+			reader.ReadStartElement();
+			
 			Point p1 = new Point();
 			p1.ReadXml(reader);
 			point1 = p1;
 
-			reader.Read();
 			Point p2 = new Point();
 			p2.ReadXml(reader);
 			point2 = p2;
 			
-			reader.Read();
 			Point p3 = new Point();
 			p3.ReadXml(reader);
 			point3 = p3;
+			
+			reader.ReadEndElement();
 		}
 	}
 }

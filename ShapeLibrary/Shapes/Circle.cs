@@ -62,14 +62,15 @@ namespace ShapeLibrary.Shapes
 
 		public override void ReadXml (XmlReader reader)
 		{
-			reader.Read();
+			reader.ReadStartElement();
 			
 			Point ctr = new Point();
 			ctr.ReadXml(reader);
 			center = ctr;
 
-			reader.Read();
 			radius = double.Parse(reader.ReadInnerXml());
+			
+			reader.ReadEndElement();
 		}
 	}
 }

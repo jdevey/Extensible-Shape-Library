@@ -70,11 +70,28 @@ namespace ShapeLibrary.Shapes
 		
 		public override void WriteXml (XmlWriter writer)
 		{
+			writer.WriteStartElement(nameof(point1));
+			point1.WriteXml(writer);
+			writer.WriteEndElement();
+			
+			writer.WriteStartElement(nameof(point2));
+			point2.WriteXml(writer);
+			writer.WriteEndElement();
 		}
-
+		
 		public override void ReadXml (XmlReader reader)
 		{
-			reader.Read();
+			reader.ReadStartElement();
+			
+			Point p1 = new Point();
+			p1.ReadXml(reader);
+			point1 = p1;
+
+			Point p2 = new Point();
+			p2.ReadXml(reader);
+			point2 = p2;
+			
+			reader.ReadEndElement();
 		}
 	}
 }
