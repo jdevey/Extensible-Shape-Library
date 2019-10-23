@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ShapeLibrary.Shapes
+namespace ShapeLibrary
 {
 	public static class Utils
 	{

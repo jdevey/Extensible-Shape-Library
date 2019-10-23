@@ -4,9 +4,15 @@ namespace ShapeLibrary.Shapes
 {
 	public class Rectangle : Shape
 	{
-		public Point point1 { get; private set; }
-		public Point point2 { get; private set; }
+		public Point point1 { get; set; }
+		public Point point2 { get; set; }
 
+		// Default constructor for serialization
+		public Rectangle()
+		{
+			++keyCounter;
+		}
+		
 		public Rectangle(Point point1, Point point2)
 		{
 			this.point1 = point1;

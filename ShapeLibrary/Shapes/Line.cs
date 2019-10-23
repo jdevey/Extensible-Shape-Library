@@ -1,11 +1,18 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace ShapeLibrary.Shapes
 {
 	public class Line : Shape
 	{
-		public Point point1 { get; private set; }
-		public Point point2 { get; private set; }
+		public Point point1 { get; set; }
+		public Point point2 { get; set; }
+
+		// Default constructor for serialization
+		public Line()
+		{
+			++keyCounter;
+		}
 
 		public Line(double x1, double y1, double x2, double y2)
 		{

@@ -1,4 +1,8 @@
-﻿namespace ShapeLibrary.Shapes
+﻿using System;
+using System.Xml.Schema;
+using System.Xml.Serialization;
+
+namespace ShapeLibrary.Shapes
 {
 	public abstract class Shape
 	{
@@ -12,8 +16,24 @@
 		public abstract void scale(double delta);
 		
 		public abstract double getArea();
-		// void save();
-		// void load();
-		// void render();
+
+		public void save(string fileName)
+		{
+			FileReadWriterConcrete fileReadWriterConcrete= new FileReadWriterConcrete();
+			fileReadWriterConcrete.writeFromShape(fileName, this);
+		}
+
+		public static Shape load(string fileName, Type expectedType)
+		{
+			ShapeFactoryConcrete shapeFactoryConcrete = new ShapeFactoryConcrete();
+			return shapeFactoryConcrete.getShape(fileName, expectedType);
+		}
+		
+		// void render(); // TODO
+		
+		public XmlSchema GetSchema()
+		{
+			return(null);
+		}
 	}
 }

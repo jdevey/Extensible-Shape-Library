@@ -1,11 +1,19 @@
 ﻿using System;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace ShapeLibrary.Shapes
 {
-	public class Circle : Shape
+	public class Circle : Shape, IXmlSerializable
 	{
 		public Point center { get; private set; }
 		public double radius { get; private set; }
+
+		// Default constructor for serialization
+		public Circle()
+		{
+			++keyCounter;
+		}
 
 		public Circle(double x, double y, double radius)
 		{
@@ -39,6 +47,16 @@ namespace ShapeLibrary.Shapes
 		public override double getArea()
 		{
 			return Math.PI * radius * radius;
+		}
+		
+		public void WriteXml (XmlWriter writer)
+		{
+			//writer.WriteString(personName);
+		}
+
+		public void ReadXml (XmlReader reader)
+		{
+			//personName = reader.ReadString();
 		}
 	}
 }

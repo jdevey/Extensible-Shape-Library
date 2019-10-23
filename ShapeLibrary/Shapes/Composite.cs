@@ -5,7 +5,7 @@ namespace ShapeLibrary.Shapes
 {
 	public class Composite : Shape
 	{
-		private readonly List<Shape> children = new List<Shape>();
+		public readonly List<Shape> children = new List<Shape>();
 
 		public Composite()
 		{

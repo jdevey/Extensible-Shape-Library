@@ -1,9 +1,16 @@
-﻿namespace ShapeLibrary.Shapes
+﻿using System.Xml.Serialization;
+
+namespace ShapeLibrary.Shapes
 {
 	public class Point : Shape
 	{
-		public double x { get; private set; }
-		public double y { get; private set; }
+		public double x { get; set; }
+		public double y { get; set; }
+		
+		// Default constructor for serialization
+		public Point()
+		{
+		}
 
 		public Point(double x, double y)
 		{
