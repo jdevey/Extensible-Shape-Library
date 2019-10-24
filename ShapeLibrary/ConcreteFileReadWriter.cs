@@ -7,7 +7,7 @@ using ShapeLibrary.Shapes;
 
 namespace ShapeLibrary
 {
-	public class FileReadWriterConcrete : FileReadWriter
+	public class FileReadWriterConcrete : AbstractFileReadWriter
 	{
 		public Stream read(string shapefileName)
 		{

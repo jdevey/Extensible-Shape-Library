@@ -22,7 +22,7 @@ namespace ShapeLibrary.Shapes
 			++keyCounter;
 		}
 
-		protected Rectangle(Rectangle other)
+		public Rectangle(Rectangle other)
 		{
 			point1 = other.point1.copy();
 			point2 = other.point2.copy();

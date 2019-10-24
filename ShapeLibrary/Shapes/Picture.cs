@@ -5,7 +5,7 @@ namespace ShapeLibrary.Shapes
 {
 	public class Picture : Rectangle
 	{
-		private Img img;
+		public ImageIntrinsicState imageIntrinsicState { get; private set; }
 		// Default constructor for serialization
 		public Picture()
 		{
@@ -15,19 +15,19 @@ namespace ShapeLibrary.Shapes
 		// Image, Bitmap, Graphic, Stream
 		public Picture(Rectangle rect, string fileName) : base(rect)
 		{
-			img = ImgPool.getImage(fileName);
+			imageIntrinsicState = ImagePool.getImage(fileName);
 			++keyCounter;
 		}
 
 		public override void render(Graphics graphics)
 		{
-			graphics.DrawImage(img.imgStorage, (int)getMinX(), (int)getMinY(), (int)getWidth(), (int)getHeight());
+			graphics.DrawImage(imageIntrinsicState.imgStorage, (int)getMinX(), (int)getMinY(), (int)getWidth(), (int)getHeight());
 		}
 		
 		public override void WriteXml (XmlWriter writer)
 		{
-			writer.WriteStartElement(nameof(img));
-			writer.WriteValue(img.src);
+			writer.WriteStartElement(nameof(imageIntrinsicState));
+			writer.WriteValue(imageIntrinsicState.src);
 			writer.WriteEndElement();
 			
 			writer.WriteStartElement(nameof(point1));
@@ -44,7 +44,7 @@ namespace ShapeLibrary.Shapes
 			reader.ReadStartElement();
 
 			string src = reader.ReadInnerXml();
-			img = new Img(src);
+			imageIntrinsicState = new ImageIntrinsicState(src);
 			
 			Point p1 = new Point();
 			p1.ReadXml(reader);

@@ -2,11 +2,14 @@
 {
 	public static class TestConstants
 	{
+		public const string IMAGE_DIR = @"ShapeLibrary\SampleImages\";
+		
 		public const string PNG_OUTPUT_FULL = @"C:\Users\devey\Code\School\CS5700\hw3\HW3\UnitTests\ImageOutput\";
 		public const string XML_OUTPUT_FULL = @"C:\Users\devey\Code\School\CS5700\hw3\HW3\UnitTests\XmlOutput\";
 		
 		public const string CIRCLE_XML = "circle.xml";
-		public const string COMPOSITE_XML = "composite.xml";
+		public const string COMPOSITE_XML1 = "composite1.xml";
+		public const string COMPOSITE_XML2 = "composite2.xml";
 		public const string LINE_XML = "line.xml";
 		public const string PICTURE_XML = "picture.xml";
 		public const string POINT_XML = "point.xml";

@@ -44,7 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CircleTests.cs" />
+    <Compile Include="ConcreteFileReadWriterTests.cs" />
+    <Compile Include="ConcreteShapeFactoryTests.cs" />
+    <Compile Include="GraphicsWrapperTests.cs" />
+    <Compile Include="ImageIntrinsicStateTests.cs" />
+    <Compile Include="ImagePoolTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShapeExceptionTests.cs" />
     <Compile Include="Shapes\CircleTests.cs" />
     <Compile Include="Shapes\CompositeTests.cs" />
     <Compile Include="Shapes\LineTests.cs" />
@@ -55,6 +61,8 @@
     <Compile Include="Shapes\TriangleTests.cs" />
     <Compile Include="ShapeTests.cs" />
     <Compile Include="TestConstants.cs" />
+    <Compile Include="UtilsTests.cs" />
+    <Compile Include="ValidatorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShapeLibrary\ShapeLibrary.csproj">
@@ -63,7 +71,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ImageOutput\circle.png" />
+    <Content Include="ImageOutput\composite.png" />
+    <Content Include="ImageOutput\line.png" />
+    <Content Include="ImageOutput\picture.png" />
     <Content Include="ImageOutput\point.png" />
+    <Content Include="ImageOutput\rectangle.png" />
+    <Content Include="XmlOutput\circle.xml" />
+    <Content Include="XmlOutput\composite1.xml" />
+    <Content Include="XmlOutput\composite2.xml" />
+    <Content Include="XmlOutput\line.xml" />
+    <Content Include="XmlOutput\picture.xml" />
     <Content Include="XmlOutput\point.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

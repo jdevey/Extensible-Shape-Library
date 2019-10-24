@@ -27,8 +27,8 @@ namespace ShapeLibrary.Shapes
 
 		public static Shape load(string fileName, Type expectedType)
 		{
-			ShapeFactoryConcrete shapeFactoryConcrete = new ShapeFactoryConcrete();
-			return shapeFactoryConcrete.getShape(fileName, expectedType);
+			ConcreteShapeFactory concreteShapeFactory = new ConcreteShapeFactory();
+			return concreteShapeFactory.getShape(fileName, expectedType);
 		}
 
 		public abstract void render(Graphics graphics);

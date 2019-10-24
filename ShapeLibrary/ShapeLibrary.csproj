@@ -41,13 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
-    <Compile Include="FileReadWriter.cs" />
-    <Compile Include="FileReadWriterConcrete.cs" />
+    <Compile Include="AbstractFileReadWriter.cs" />
+    <Compile Include="ConcreteFileReadWriter.cs" />
     <Compile Include="GraphicsWrapper.cs" />
-    <Compile Include="Img.cs" />
-    <Compile Include="ImgPool.cs" />
+    <Compile Include="ImageIntrinsicState.cs" />
+    <Compile Include="ImagePool.cs" />
     <Compile Include="ShapeFactory.cs" />
-    <Compile Include="ShapeFactoryConcrete.cs" />
+    <Compile Include="ConcreteShapeFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShapeException.cs" />
     <Compile Include="Shapes\Circle.cs" />

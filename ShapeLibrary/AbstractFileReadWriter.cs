@@ -3,7 +3,7 @@ using ShapeLibrary.Shapes;
 
 namespace ShapeLibrary
 {
-	public interface FileReadWriter
+	public interface AbstractFileReadWriter
 	{
 		Stream read(string shapeFileName);
 		

@@ -5,7 +5,7 @@ using ShapeLibrary.Shapes;
 
 namespace ShapeLibrary
 {
-	public class ShapeFactoryConcrete : ShapeFactory
+	public class ConcreteShapeFactory : ShapeFactory
 	{
 		public Shape getShape(string fileName, Type expectedType)
 		{
