@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Xml;
@@ -60,6 +61,14 @@ namespace ShapeLibrary.Shapes
 		public void eraseAllShapes()
 		{
 			children.Clear();
+		}
+		
+		public override void render(Graphics graphics)
+		{
+			foreach (Shape child in children)
+			{
+				child.render(graphics);
+			}
 		}
 
 		public override void WriteXml(XmlWriter writer)

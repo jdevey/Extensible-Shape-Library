@@ -1,4 +1,5 @@
-﻿using System.Xml;
+﻿using System.Drawing;
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace ShapeLibrary.Shapes
@@ -40,16 +41,11 @@ namespace ShapeLibrary.Shapes
 			return 0.0;
 		}
 
-		public void save()
+		public override void render(Graphics graphics)
 		{
-		}
-
-		public void load()
-		{
-		}
-
-		public void render()
-		{
+			const int radius = 7;
+			SolidBrush brush = new SolidBrush(Color.Black);
+			graphics.FillEllipse(brush, (int)x - radius, (int)y - radius, radius * 2, radius * 2);
 		}
 
 		public Point copy()

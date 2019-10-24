@@ -4,3 +4,4 @@ C:\Users\devey\Code\School\CS5700\hw3\HW3\ShapeLibrary\obj\Debug\ShapeLibrary.cs
 C:\Users\devey\Code\School\CS5700\hw3\HW3\ShapeLibrary\obj\Debug\ShapeLibrary.csproj.CoreCompileInputs.cache
 C:\Users\devey\Code\School\CS5700\hw3\HW3\ShapeLibrary\obj\Debug\ShapeLibrary.dll
 C:\Users\devey\Code\School\CS5700\hw3\HW3\ShapeLibrary\obj\Debug\ShapeLibrary.pdb
+C:\Users\devey\Code\School\CS5700\hw3\HW3\ShapeLibrary\obj\Debug\ShapeLibrary.csproj.ResolveComReference.cache

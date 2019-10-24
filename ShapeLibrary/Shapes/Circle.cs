@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -47,6 +48,15 @@ namespace ShapeLibrary.Shapes
 		public override double getArea()
 		{
 			return Math.PI * radius * radius;
+		}
+		
+		public override void render(Graphics graphics)
+		{
+			graphics.DrawEllipse(Constants.bluePen,
+				(int)(center.x - radius), 
+				(int)(center.y - radius), 
+				(int)radius * 2, 
+				(int)radius * 2);
 		}
 		
 		public override void WriteXml (XmlWriter writer)

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.Runtime.InteropServices.ComTypes;
 using System.Xml;
 
 namespace ShapeLibrary.Shapes
@@ -60,6 +62,17 @@ namespace ShapeLibrary.Shapes
 		private Point getCenter()
 		{
 			return new Point((point1.x + point2.x + point3.x) / 3, (point1.y + point2.y + point3.y) / 3);
+		}
+		
+		public override void render(Graphics graphics)
+		{
+			System.Drawing.Point[] points =
+			{
+				new System.Drawing.Point((int)point1.x, (int)point1.y),
+				new System.Drawing.Point((int)point2.x, (int)point2.y),
+				new System.Drawing.Point((int)point3.x, (int)point3.y) 
+			};
+			graphics.DrawPolygon(Constants.bluePen, points);
 		}
 		
 		public override void WriteXml (XmlWriter writer)

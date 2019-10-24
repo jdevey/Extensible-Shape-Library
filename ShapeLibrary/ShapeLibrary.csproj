@@ -35,11 +35,17 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
     <Compile Include="FileReadWriter.cs" />
     <Compile Include="FileReadWriterConcrete.cs" />
+    <Compile Include="GraphicsWrapper.cs" />
+    <Compile Include="Img.cs" />
+    <Compile Include="ImgPool.cs" />
     <Compile Include="ShapeFactory.cs" />
     <Compile Include="ShapeFactoryConcrete.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -54,6 +60,22 @@
     <Compile Include="Shapes\Triangle.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="Validator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="System_Drawing">
+      <Guid>{D37E2A3E-8545-3A39-9F4F-31827C9124AB}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SampleImages\tree1.png" />
+    <Content Include="SampleImages\tree2.png" />
+    <Content Include="SampleImages\tree3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

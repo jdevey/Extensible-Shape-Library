@@ -2,6 +2,7 @@
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
+using System.Drawing;
 
 namespace ShapeLibrary.Shapes
 {
@@ -9,7 +10,7 @@ namespace ShapeLibrary.Shapes
 	{
 		protected static uint keyCounter = 0;
 		public readonly uint shapeId = keyCounter;
-		
+
 		public abstract void translate(double dx, double dy);
 		
 		// Scale any shape by a multiplier. For example, giving a value of 3
@@ -29,8 +30,13 @@ namespace ShapeLibrary.Shapes
 			ShapeFactoryConcrete shapeFactoryConcrete = new ShapeFactoryConcrete();
 			return shapeFactoryConcrete.getShape(fileName, expectedType);
 		}
-		
-		// void render(); // TODO
+
+		public abstract void render(Graphics graphics);
+
+		public void saveDrawingToFile(GraphicsWrapper graphicsWrapper, string fileName)
+		{
+			graphicsWrapper.saveToFile(fileName);
+		}
 
 		public abstract void WriteXml(XmlWriter writer);
 

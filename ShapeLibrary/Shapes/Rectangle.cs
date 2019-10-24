@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Xml;
 
 namespace ShapeLibrary.Shapes
@@ -58,6 +59,16 @@ namespace ShapeLibrary.Shapes
 			return new Point((point1.x + point2.x) / 2, (point1.y + point2.y) / 2);
 		}
 
+		public double getMinX()
+		{
+			return Math.Min(point1.x, point2.x);
+		}
+
+		public double getMinY()
+		{
+			return Math.Min(point1.y, point2.y);
+		}
+
 		public double getWidth()
 		{
 			return Math.Abs(point1.x - point2.x);
@@ -66,6 +77,15 @@ namespace ShapeLibrary.Shapes
 		public double getHeight()
 		{
 			return Math.Abs(point1.y - point2.y);
+		}
+		
+		public override void render(Graphics graphics)
+		{
+			graphics.DrawRectangle(Constants.bluePen,
+				(int)getMinX(),
+				(int)getMinY(),
+				(int)getWidth(),
+				(int)getHeight());
 		}
 		
 		public override void WriteXml (XmlWriter writer)

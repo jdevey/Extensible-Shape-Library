@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Runtime.Serialization;
 using System.Xml;
 
@@ -57,6 +58,11 @@ namespace ShapeLibrary.Shapes
 		private Point getCenter()
 		{
 			return new Point((point1.x + point2.x) / 2, (point1.y + point2.y) / 2);
+		}
+		
+		public override void render(Graphics graphics)
+		{
+			graphics.DrawLine(Constants.blackPen, (int)point1.x, (int)point1.y, (int)point2.x, (int)point2.y);
 		}
 
 		public override void WriteXml (XmlWriter writer)
