@@ -43,7 +43,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CircleTests.cs" />
     <Compile Include="ConcreteFileReadWriterTests.cs" />
     <Compile Include="ConcreteShapeFactoryTests.cs" />
     <Compile Include="GraphicsWrapperTests.cs" />
@@ -59,7 +58,6 @@
     <Compile Include="Shapes\RectangleTests.cs" />
     <Compile Include="Shapes\ShapeTests.cs" />
     <Compile Include="Shapes\TriangleTests.cs" />
-    <Compile Include="ShapeTests.cs" />
     <Compile Include="TestConstants.cs" />
     <Compile Include="UtilsTests.cs" />
     <Compile Include="ValidatorTests.cs" />

@@ -42,7 +42,6 @@
       </e>
       <e p="UnitTests" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="CircleTests.cs" t="Include" />
         <e p="ConcreteFileReadWriterTests.cs" t="Include" />
         <e p="ConcreteShapeFactoryTests.cs" t="Include" />
         <e p="GraphicsWrapperTests.cs" t="Include" />

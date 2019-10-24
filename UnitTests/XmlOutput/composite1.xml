@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Composite>
+  <children>
+    <ShapeLibrary.Shapes.Point>
+      <x>13</x>
+      <y>22</y>
+    </ShapeLibrary.Shapes.Point>
+    <ShapeLibrary.Shapes.Circle>
+      <center>
+        <x>40</x>
+        <y>50</y>
+      </center>
+      <radius>11</radius>
+    </ShapeLibrary.Shapes.Circle>
+  </children>
+</Composite>

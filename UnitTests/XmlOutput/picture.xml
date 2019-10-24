@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Picture>
+  <imageIntrinsicState>C:\Users\devey\Code\School\CS5700\hw3\HW3\ShapeLibrary\SampleImages\tree1.png</imageIntrinsicState>
+  <point1>
+    <x>100</x>
+    <y>50</y>
+  </point1>
+  <point2>
+    <x>300</x>
+    <y>250</y>
+  </point2>
+</Picture>
