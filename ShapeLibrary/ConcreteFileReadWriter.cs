@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Text;
+﻿using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 using ShapeLibrary.Shapes;
@@ -23,9 +21,6 @@ namespace ShapeLibrary
 
 			shapeData.Position = 0;
 			XmlDocument xmlDocument = new XmlDocument();
-			//xmlDocument.Attribute("xsi",
-				//"http://www.w3.org/2001/XMLSchema-instance");
-			//xmlDocument.Schemas.Add("xsi", "http://www.w3.org/2001/XMLSchema-instance");
 			xmlDocument.Load(shapeData);
 			xmlDocument.Save(shapefileName);
 		}

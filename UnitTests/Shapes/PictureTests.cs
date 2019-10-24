@@ -30,8 +30,7 @@ namespace UnitTests.Shapes
 			GraphicsWrapper gw = new GraphicsWrapper();
 			Graphics graphics = gw.graphics;
 			p1.render(graphics);
-//			gw.saveToFile(pngPath);
-			gw.saveToFile("foo.png");
+			gw.saveToFile(pngPath);
 		}	
 	}
 }

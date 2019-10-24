@@ -33,11 +33,6 @@ namespace ShapeLibrary.Shapes
 
 		public abstract void render(Graphics graphics);
 
-		public void saveDrawingToFile(GraphicsWrapper graphicsWrapper, string fileName)
-		{
-			graphicsWrapper.saveToFile(fileName);
-		}
-
 		public abstract void WriteXml(XmlWriter writer);
 
 		public abstract void ReadXml(XmlReader reader);

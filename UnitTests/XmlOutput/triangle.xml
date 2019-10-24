@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Triangle>
+  <point1>
+    <x>50</x>
+    <y>100</y>
+  </point1>
+  <point2>
+    <x>100</x>
+    <y>100</y>
+  </point2>
+  <point3>
+    <x>100</x>
+    <y>50</y>
+  </point3>
+</Triangle>

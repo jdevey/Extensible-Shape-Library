@@ -53,6 +53,7 @@
           <e p="picture.png" t="Include" />
           <e p="point.png" t="Include" />
           <e p="rectangle.png" t="Include" />
+          <e p="triangle.png" t="Include" />
         </e>
         <e p="ImagePoolTests.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
@@ -70,7 +71,6 @@
           <e p="ShapeTests.cs" t="Include" />
           <e p="TriangleTests.cs" t="Include" />
         </e>
-        <e p="ShapeTests.cs" t="Include" />
         <e p="TestConstants.cs" t="Include" />
         <e p="UnitTests.csproj" t="IncludeRecursive" />
         <e p="UtilsTests.cs" t="Include" />

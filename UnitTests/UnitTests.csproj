@@ -75,6 +75,7 @@
     <Content Include="ImageOutput\picture.png" />
     <Content Include="ImageOutput\point.png" />
     <Content Include="ImageOutput\rectangle.png" />
+    <Content Include="ImageOutput\triangle.png" />
     <Content Include="XmlOutput\circle.xml" />
     <Content Include="XmlOutput\composite1.xml" />
     <Content Include="XmlOutput\composite2.xml" />

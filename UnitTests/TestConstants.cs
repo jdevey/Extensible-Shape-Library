@@ -14,7 +14,10 @@
 		public const string PICTURE_XML = "picture.xml";
 		public const string POINT_XML = "point.xml";
 		public const string RECTANGLE_XML = "rectangle.xml";
+		public const string SHAPE_POINT_XML = "shapePoint.xml";
 		public const string TRIANGLE_XML = "triangle.xml";
+		public const string READ_WRITE_TEST_XML = "readWriteTest.xml";
+		public const string FACTORY_TEST_XML = "factoryTest.xml";
 		
 		public const string CIRCLE_PNG = "circle.png";
 		public const string COMPOSITE_PNG = "composite.png";
@@ -22,6 +25,7 @@
 		public const string PICTURE_PNG = "picture.png";
 		public const string POINT_PNG = "point.png";
 		public const string RECTANGLE_PNG = "rectangle.png";
+		public const string SHAPE_POINT_PNG = "shapePoint.png";
 		public const string TRIANGLE_PNG = "triangle.png";
 	}
 }

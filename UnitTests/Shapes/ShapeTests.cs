@@ -12,14 +12,14 @@ namespace UnitTests.Shapes
 		[Test]
 		public void Main()
 		{
-			string xmlPath = TestConstants.XML_OUTPUT_FULL + TestConstants.POINT_XML;
+			string xmlPath = TestConstants.XML_OUTPUT_FULL + TestConstants.SHAPE_POINT_XML;
 			Point p1 = new Point(13, 22);
 			p1.save(xmlPath);
 			Point p2 = Shape.load(xmlPath, typeof(Point)) as Point;
 			Assert.AreEqual(p1.x, p2.x);
 			Assert.AreEqual(p1.y, p2.y);
 
-			string pngPath = TestConstants.PNG_OUTPUT_FULL + TestConstants.POINT_PNG;
+			string pngPath = TestConstants.PNG_OUTPUT_FULL + TestConstants.SHAPE_POINT_PNG;
 			GraphicsWrapper gw = new GraphicsWrapper();
 			Graphics graphics = gw.graphics;
 			p1.render(graphics);
@@ -34,6 +34,8 @@ namespace UnitTests.Shapes
 			Assert.AreEqual(p1.x, p3.x);
 			Assert.AreEqual(p1.y, p3.y);
 			Assert.AreEqual(p3.getArea(), 0);
+			
+			Assert.IsNull(p1.GetSchema());
 		}
 	}
 }

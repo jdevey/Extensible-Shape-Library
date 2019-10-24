@@ -35,6 +35,11 @@ namespace UnitTests.Shapes
 			l1.render(graphics);
 			gw.saveToFile(pngPath);
 
+			Line l3 = new Line(1, 2, 3, 4);
+			Assert.AreEqual(l3.point1.x, 1);
+			Assert.AreEqual(l3.point1.y, 2);
+			Assert.AreEqual(l3.point2.x, 3);
+			Assert.AreEqual(l3.point2.y, 4);
 		}
 	}
 }
