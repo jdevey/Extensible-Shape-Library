@@ -1,5 +1,4 @@
-﻿using System;
-using ShapeLibrary.Shapes;
+﻿using ShapeLibrary.Shapes;
 
 namespace ShapeLibrary
 {

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.IO;
 
 namespace ShapeLibrary
 {
@@ -12,7 +11,6 @@ namespace ShapeLibrary
 		public ImageIntrinsicState(string src)
 		{
 			this.src = src;
-			string xx = Directory.GetCurrentDirectory();
 			imgStorage = Image.FromFile(src);
 		}
 

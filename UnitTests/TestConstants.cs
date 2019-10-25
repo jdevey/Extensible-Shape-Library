@@ -3,9 +3,13 @@
 	public static class TestConstants
 	{
 		public const string IMAGE_DIR = @"ShapeLibrary\SampleImages\";
+		private const string PNG_OUTPUT = @"UnitTests\ImageOutput\";
+		private const string XML_OUTPUT = @"UnitTests\XmlOutput\";
 		
-		public const string PNG_OUTPUT_FULL = @"C:\Users\devey\Code\School\CS5700\hw3\HW3\UnitTests\ImageOutput\";
-		public const string XML_OUTPUT_FULL = @"C:\Users\devey\Code\School\CS5700\hw3\HW3\UnitTests\XmlOutput\";
+		public static readonly string PNG_OUTPUT_FULL =
+			TestUtils.getSolutionDirectory() + PNG_OUTPUT;
+		public static readonly string XML_OUTPUT_FULL =
+			TestUtils.getSolutionDirectory() + XML_OUTPUT;
 		
 		public const string CIRCLE_XML = "circle.xml";
 		public const string COMPOSITE_XML1 = "composite1.xml";

@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Xml;
-using System.Xml.Serialization;
 
 namespace ShapeLibrary.Shapes
 {
@@ -86,8 +84,6 @@ namespace ShapeLibrary.Shapes
 
 		public override void ReadXml(XmlReader reader)
 		{
-			int depth = reader.Depth;
-			
 			reader.ReadStartElement();
 			reader.ReadStartElement();
 			
@@ -101,18 +97,5 @@ namespace ShapeLibrary.Shapes
 			reader.ReadEndElement();
 			reader.ReadEndElement();
 		}
-
-//		private Shape getShapeById(uint id)
-//		{
-//			foreach (Shape child in children)
-//			{
-//				if (child.shapeId == id)
-//				{
-//					return child;
-//				}
-//			}
-//
-//			return null;
-//		}
 	}
 }

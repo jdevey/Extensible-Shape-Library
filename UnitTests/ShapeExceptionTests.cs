@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq.Expressions;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using ShapeLibrary;
 
 namespace UnitTests
@@ -8,6 +6,18 @@ namespace UnitTests
 	[TestFixture]
 	public class ShapeExceptionTests
 	{
-		private string errMsg = "Here's a shape error.";
+		[Test]
+		public void Main()
+		{
+			string errMsg = "Here's a shape error.";
+			try
+			{
+				throw new ShapeException(errMsg);
+			}
+			catch (ShapeException se)
+			{
+				Assert.AreEqual(errMsg, se.Message);
+			} 
+		}
 	}
 }

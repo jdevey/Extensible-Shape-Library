@@ -1,12 +1,11 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Drawing.Imaging;
 
 namespace ShapeLibrary
 {
 	public class GraphicsWrapper
 	{
-		public Bitmap bitmap { get; }
+		private Bitmap bitmap { get; }
 		public Graphics graphics { get; }
 
 		public GraphicsWrapper()

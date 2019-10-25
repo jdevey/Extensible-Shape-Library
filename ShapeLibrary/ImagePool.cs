@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 namespace ShapeLibrary
 {
-	public class ImagePool
+	public static class ImagePool
 	{
 		private static readonly HashSet<ImageIntrinsicState> pool = new HashSet<ImageIntrinsicState>();
 

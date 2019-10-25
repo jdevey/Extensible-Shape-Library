@@ -53,6 +53,7 @@
           <e p="picture.png" t="Include" />
           <e p="point.png" t="Include" />
           <e p="rectangle.png" t="Include" />
+          <e p="shapePoint.png" t="Include" />
           <e p="triangle.png" t="Include" />
         </e>
         <e p="ImagePoolTests.cs" t="Include" />
@@ -72,6 +73,7 @@
           <e p="TriangleTests.cs" t="Include" />
         </e>
         <e p="TestConstants.cs" t="Include" />
+        <e p="TestUtils.cs" t="Include" />
         <e p="UnitTests.csproj" t="IncludeRecursive" />
         <e p="UtilsTests.cs" t="Include" />
         <e p="ValidatorTests.cs" t="Include" />
@@ -79,9 +81,14 @@
           <e p="circle.xml" t="Include" />
           <e p="composite1.xml" t="Include" />
           <e p="composite2.xml" t="Include" />
+          <e p="factoryTest.xml" t="Include" />
           <e p="line.xml" t="Include" />
           <e p="picture.xml" t="Include" />
           <e p="point.xml" t="Include" />
+          <e p="readWriteTest.xml" t="Include" />
+          <e p="rectangle.xml" t="Include" />
+          <e p="shapePoint.xml" t="Include" />
+          <e p="triangle.xml" t="Include" />
         </e>
       </e>
     </e>

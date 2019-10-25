@@ -1,14 +1,12 @@
-﻿using System;
-using System.Drawing;
-using System.Runtime.Serialization;
+﻿using System.Drawing;
 using System.Xml;
 
 namespace ShapeLibrary.Shapes
 {
 	public class Line : Shape
 	{
-		public Point point1 { get; set; }
-		public Point point2 { get; set; }
+		public Point point1 { get; private set; }
+		public Point point2 { get; private set; }
 
 		// Default constructor for serialization
 		public Line()

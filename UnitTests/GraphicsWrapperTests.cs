@@ -1,7 +1,6 @@
 ﻿using System.Drawing;
 using NUnit.Framework;
 using ShapeLibrary;
-using ShapeLibrary.Shapes;
 using Point = ShapeLibrary.Shapes.Point;
 
 namespace UnitTests

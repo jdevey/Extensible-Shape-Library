@@ -13,14 +13,14 @@ namespace UnitTests.Shapes
 		[Test]
 		public void Main()
 		{
-			string solDir = Utils.getSolutionDirectory();
+			string solDir = TestUtils.getSolutionDirectory();
 			
 			string xmlPath = TestConstants.XML_OUTPUT_FULL + TestConstants.PICTURE_XML;
 			Rectangle r1 = new Rectangle(new Point( 100, 50), new Point(300, 250));
 			Picture p1 = new Picture(r1, solDir + TestConstants.IMAGE_DIR + Constants.defaultImages[0]);
 			p1.save(xmlPath);
 			Picture p2 = Shape.load(xmlPath, typeof(Picture)) as Picture;
-			Assert.AreEqual(p1.imageIntrinsicState.src, p2.imageIntrinsicState.src);
+			Assert.AreEqual(p1.intrinsicState.src, p2.intrinsicState.src);
 			Assert.AreEqual(p1.point1.x, p2.point1.x);
 			Assert.AreEqual(p1.point1.y, p2.point1.y);
 			Assert.AreEqual(p1.point2.x, p2.point2.x);

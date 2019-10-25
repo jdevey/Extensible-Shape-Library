@@ -6,11 +6,11 @@ namespace ShapeLibrary.Shapes
 {
 	public class Rectangle : Shape
 	{
-		public Point point1 { get; set; }
-		public Point point2 { get; set; }
+		public Point point1 { get; protected set; }
+		public Point point2 { get; protected set; }
 
 		// Default constructor for serialization
-		public Rectangle()
+		protected Rectangle()
 		{
 			++keyCounter;
 		}
@@ -59,22 +59,22 @@ namespace ShapeLibrary.Shapes
 			return new Point((point1.x + point2.x) / 2, (point1.y + point2.y) / 2);
 		}
 
-		public double getMinX()
+		protected double getMinX()
 		{
 			return Math.Min(point1.x, point2.x);
 		}
 
-		public double getMinY()
+		protected double getMinY()
 		{
 			return Math.Min(point1.y, point2.y);
 		}
 
-		public double getWidth()
+		protected double getWidth()
 		{
 			return Math.Abs(point1.x - point2.x);
 		}
 
-		public double getHeight()
+		protected double getHeight()
 		{
 			return Math.Abs(point1.y - point2.y);
 		}
