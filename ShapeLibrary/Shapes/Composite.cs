@@ -43,27 +43,14 @@ namespace ShapeLibrary.Shapes
 			return childSum;
 		}
 
-		private bool isShapeInSubtree(Shape shape, uint baseId)
+		public bool isShapeInSubtree(Shape shape, uint baseId)
 		{
-			if (shape == null)
-			{
-				return false;
-			}
-			
 			if (shape.getShapeId() == baseId)
 			{
 				return true;
 			}
 
-			foreach (Shape child in children)
-			{
-				if (child.getShapeId() == baseId)
-				{
-					return true;
-				}
-			}
-
-			return false;
+			return children.Any(child => child.shapeId == baseId);
 		}
 
 		public void addShape(Shape shape)
@@ -91,6 +78,10 @@ namespace ShapeLibrary.Shapes
 
 		public void eraseAllShapes()
 		{
+			foreach (Shape child in children)
+			{
+				child.isChild = false;
+			}
 			children.Clear();
 		}
 		

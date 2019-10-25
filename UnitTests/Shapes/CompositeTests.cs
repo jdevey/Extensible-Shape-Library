@@ -72,6 +72,14 @@ namespace UnitTests.Shapes
 			Assert.AreEqual(topLayerComp.children.Count, 1);
 			topLayerComp.eraseAllShapes();
 			Assert.AreEqual(topLayerComp.children.Count, 0);
+			
+			topLayerComp.addShape(topLayerPoint);
+			topLayerComp.addShape(c1);
+			
+			Assert.Catch <ShapeException> (() => topLayerComp.addShape(c1));
+			Assert.Catch <ShapeException> (() => topLayerComp.addShape(topLayerComp));
+			Assert.Catch <ShapeException> (() => topLayerComp.addShape(p1));
+			//Assert.Catch <ShapeException> (() => c1.addShape(topLayerComp));
 		}
 	}
 }
