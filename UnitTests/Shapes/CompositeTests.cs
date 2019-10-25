@@ -68,7 +68,7 @@ namespace UnitTests.Shapes
 			gw.saveToFile(pngPath);
 			
 			Assert.AreEqual(topLayerComp.children.Count, 2);
-			topLayerComp.eraseShape(c1.shapeId);
+			topLayerComp.eraseShape(c1.getShapeId());
 			Assert.AreEqual(topLayerComp.children.Count, 1);
 			topLayerComp.eraseAllShapes();
 			Assert.AreEqual(topLayerComp.children.Count, 0);

@@ -8,8 +8,11 @@ namespace ShapeLibrary.Shapes
 {
 	public abstract class Shape : IXmlSerializable
 	{
-		protected static uint keyCounter = 0;
-		public readonly uint shapeId = keyCounter;
+		protected static readonly uint[] keyCounter = {0};
+		public readonly uint shapeId = initShapeId();
+//		public readonly long shapeId = new DateTime().Ticks;
+
+		public bool isChild = false;
 
 		public abstract void translate(double dx, double dy);
 		
@@ -40,6 +43,27 @@ namespace ShapeLibrary.Shapes
 		public XmlSchema GetSchema()
 		{
 			return null;
+		}
+
+//		protected void incrementKey()
+//		{
+//			lock (keyCounter)
+//			{
+//				++keyCounter[0];
+//			}
+//		}
+
+		private static uint initShapeId()
+		{
+			lock (keyCounter)
+			{
+				return keyCounter[0]++;
+			}
+		}
+		
+		public uint getShapeId()
+		{
+			return shapeId;
 		}
 	}
 }

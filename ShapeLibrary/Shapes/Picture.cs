@@ -9,13 +9,13 @@ namespace ShapeLibrary.Shapes
 		// Default constructor for serialization
 		public Picture()
 		{
-			++keyCounter;
+			//incrementKey();
 		}
 		
 		public Picture(Rectangle rect, string fileName) : base(rect)
 		{
 			intrinsicState = ImagePool.getImage(fileName);
-			++keyCounter;
+			//incrementKey();
 		}
 
 		public override void render(Graphics graphics)

@@ -11,6 +11,7 @@ namespace ShapeLibrary.Shapes
 		// Default constructor for serialization
 		public Point()
 		{
+			//incrementKey();
 		}
 
 		public Point(double x, double y)
@@ -21,7 +22,7 @@ namespace ShapeLibrary.Shapes
 				Validator.generateInvalidValueMsg("y", y));
 			this.x = x;
 			this.y = y;
-			++keyCounter;
+			//incrementKey();
 		}
 
 		public override void translate(double dx, double dy)

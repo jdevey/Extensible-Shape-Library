@@ -12,21 +12,21 @@ namespace ShapeLibrary.Shapes
 		// Default constructor for serialization
 		protected Rectangle()
 		{
-			++keyCounter;
+			//incrementKey();
 		}
 		
 		public Rectangle(Point point1, Point point2)
 		{
 			this.point1 = point1;
 			this.point2 = point2;
-			++keyCounter;
+			//incrementKey();
 		}
 
 		public Rectangle(Rectangle other)
 		{
 			point1 = other.point1.copy();
 			point2 = other.point2.copy();
-			++keyCounter;
+			//incrementKey();
 		}
 
 		public override void translate(double dx, double dy)

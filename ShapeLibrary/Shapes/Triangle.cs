@@ -13,7 +13,7 @@ namespace ShapeLibrary.Shapes
 		// Default constructor for serialization
 		public Triangle()
 		{
-			++keyCounter;
+			//incrementKey();
 		}
 		
 		public Triangle(Point point1, Point point2, Point point3)
@@ -21,7 +21,7 @@ namespace ShapeLibrary.Shapes
 			this.point1 = point1;
 			this.point2 = point2;
 			this.point3 = point3;
-			++keyCounter;
+			//incrementKey();
 		}
 		
 		public override void translate(double dx, double dy)

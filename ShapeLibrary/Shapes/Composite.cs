@@ -12,7 +12,7 @@ namespace ShapeLibrary.Shapes
 
 		public Composite()
 		{
-			++keyCounter;
+			//incrementKey();
 			children = new List<Shape>();
 		}
 
@@ -43,16 +43,49 @@ namespace ShapeLibrary.Shapes
 			return childSum;
 		}
 
+		private bool isShapeInSubtree(Shape shape, uint baseId)
+		{
+			if (shape == null)
+			{
+				return false;
+			}
+			
+			if (shape.getShapeId() == baseId)
+			{
+				return true;
+			}
+
+			foreach (Shape child in children)
+			{
+				if (child.getShapeId() == baseId)
+				{
+					return true;
+				}
+			}
+
+			return false;
+		}
+
 		public void addShape(Shape shape)
 		{
 			Validator.validateShape(shape,
 				Validator.generateInvalidValueMsg("shape", shape));
-			children.Add(shape);
+			
+			if (!shape.isChild && !isShapeInSubtree(shape, shapeId))
+			{
+				shape.isChild = true;
+				children.Add(shape);
+			}
+			else
+			{
+				throw new ShapeException("ERROR: Attempted to add invalid shape to composite.");
+			}
 		}
 
 		public void eraseShape(uint id)
 		{
 			Shape found = children.Single(i => i.shapeId == id);
+			found.isChild = false;
 			children.Remove(found);
 		}
 

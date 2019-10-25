@@ -12,7 +12,7 @@ namespace ShapeLibrary.Shapes
 		// Default constructor for serialization
 		public Circle()
 		{
-			++keyCounter;
+			//incrementKey();
 		}
 
 		public Circle(double x, double y, double radius)
@@ -21,7 +21,7 @@ namespace ShapeLibrary.Shapes
 				Validator.generateInvalidValueMsg("radius", radius));
 			center = new Point(x, y);
 			this.radius = radius;
-			++keyCounter;
+			//incrementKey();
 		}
 
 		public Circle(Point center, double radius)
